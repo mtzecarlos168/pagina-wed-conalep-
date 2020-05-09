@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Diseño y configuración físico de las redes VLAN</title>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+        <div class="container logo-nav-container">
+            <a href="bienvenida.html" class="logo">Redes VLAN</a>
+            <nav class="navigation">
+             <ul>
+              <li><a href="index.html">¿Que son las VLAN?</a></li>
+              <li><a href="index2.html">Configuracion de la VLAN</a></li>
+              <li><a href="index3.html">Seguridad y diseño de redes VLAN</a></li>
+              
+                </ul>  
+            </nav>
+            </div>
+        </header>
+    
+        <section>
+            <main class="main">
+            <div class="container">
+                <h1>¿Que son las Vlan?</h1>
+                <img src="images/router.jpeg">
+                
+                <p>Aunque no es muy habitual encontrar esta función en los equipos suministrados por los operadores, muchas de las alternativas existentes en el mercado permuten configurar las VLANs. Seguro que en algún momento has oído hablar de ellas, pero no sabes muy bien para qué sirven y qué ventajas ofrecen en lo que respecta a la seguridad de las comunicaciones. </p>
+                
+                <p>En primer lugar, vamos a empezar por saber qué son. Del inglés Virtual LAN (Red de área local y virtual), es un método que permite crear redes que lógicamente son independientes, aunque estas se encuentren dentro de una misma red física. De esta forma, un usuario podría disponer de varias VLANs dentro de un mismo router o switch. Podría decirse que cada una de estas redes agrupa los equipos de un determinado segmento de red. Crear estas particiones tiene unas ventajas bastante claras a la hora de administrar una red.</p>
+                
+                <h1>¿Qué uso tienen?</h1>
+                
+                <p>A día de hoy se configuran a través de software y poseen grandes beneficios a la hora de garantizar la seguridad y administrar los equipos de forma eficaz, tal y como a hemos puntualizado. En lo que concierne a la seguridad, hay que tener en cuenta que los dispositivos pertenecientes a una VLAN no tienen acceso a los que se encuentren en otras y viceversa. Resulta útil cuando queremos segmentar los equipos y limitar el acceso entre ellos por temas de seguridad.
+
+De lo dicho con anterioridad se deduce que la gestión también será mucho más sencilla, ya que tendríamos a los dispositivos divididos en «clases» aunque pertenezcan a una misma red.</p>
+                
+                <img src="images/topologia.png">
+               
+                <h1>Tipos de Vlan</h1>
+                <p>Dependiendo de la fuente consultada incluso del fabricante se pueden distinguir hasta seis tipos de redes virtuales. Sin embargo, nosotros solo nos vamos a centrar en tres: a nivel de puerto, MAC y aplicación.</p>
+                 <img src="images/vlan.png">
+                <p>*Puerto. También conocida como Port Switching en los menús de configuración de los routers y switches, se trata de la más extendida y utilizada. Cada puerto se asigna a una VLAN y los usuarios que estén conectados a ese puerto pertenecen a la VLAN asignada. Los usuarios dentro de una misma VLAN poseen de visibilidad los unos sobre los otros, aunque no a las redes virtuales vecinas. El único inconveniente es que no permite dinamismo a la hora de ubicar los usuarios y en el caso de que el usuario cambie de emplazamiento físicamente se debería reconfigurar la red virtual.</p>
+                <img src="images/pot.jpg">
+                
+                <p>*MAC: El razonamiento es similar a la anterior, salvo que en vez de ser una asignación a nivel de puerto lo es a nivel de dirección MAC del dispositivo. La ventaja es que permite movilidad sin necesidad de que se tengan que aplicar cambios en la configuración del switch o del router. El problema parece bastante claro: añadir todos los usuarios puede resultar tedioso.</p>
+                <p>*Aplicaciones: Se asignarían redes virtuales en función de la aplicación utilizada, y en este caso intervienen varios factores, como por ejemplo la hora en la que nos encontramos, la dirección MAC o la subred, permitiendo distinguir entre aplicaciones SSH, FTP, Samba o incluso SMTP.</p>
+                
+                <h1>Descripcion general de las VLAN</h1>
+                
+                <p>Existen diferentes tipos de redes VLAN, los cuales se utilizan en las redes modernas. Algunos tipos de VLAN se definen según las clases de tráfico. Otros tipos de VLAN se definen según la función específica que cumplen.</p>
+                
+                <h1>VLAN de datos</h1>
+                
+                <p>Una VLAN de datos es una VLAN configurada para transportar tráfico generado por usuarios. Una VLAN que transporta tráfico de administración o de voz no sería una VLAN de datos. Es una práctica común separar el tráfico de voz y de administración del tráfico de datos. A veces a una VLAN de datos se la denomina VLAN de usuario. Las VLAN de datos se usan para dividir la red en grupos de usuarios o dispositivos</p>
+                
+                <h1>VLAN predeterminada</h1>
+                
+                <p>Todos los puertos de switch se vuelven parte de la VLAN predeterminada después del arranque inicial de un switch que carga la configuración predeterminada. Los puertos de switch que participan en la VLAN predeterminada forman parte del mismo dominio de difusión. Esto admite cualquier dispositivo conectado a cualquier puerto de switch para comunicarse con otros dispositivos en otros puertos de switch. La VLAN predeterminada para los switches Cisco es la VLAN 1. En la ilustración, se emitió el comando show vlan brief en un switch que ejecuta la configuración predeterminada. Observe que todos los puertos se asignan a la VLAN 1 de manera predeterminada.
+
+La VLAN 1 tiene todas las características de cualquier VLAN, excepto que no se le puede cambiar el nombre ni se puede eliminar. Todo el tráfico de control de capa 2 se asocia a la VLAN 1 de manera predeterminada.</p>
+                
+            <h1>VLAN nativa</h1>
+                
+                <p>Una VLAN nativa está asignada a un puerto troncal 802.1Q. Los puertos de enlace troncal son los enlaces entre switches que admiten la transmisión de tráfico asociado a más de una VLAN. Los puertos de enlace troncal 802.1Q admiten el tráfico proveniente de muchas VLAN (tráfico con etiquetas), así como el tráfico que no proviene de una VLAN (tráfico sin etiquetar). El tráfico con etiquetas hace referencia al tráfico que tiene una etiqueta de 4 bytes insertada en el encabezado de la trama de Ethernet original, que especifica la VLAN a la que pertenece la trama. El puerto de enlace troncal 802.1Q coloca el tráfico sin etiquetar en la VLAN nativa, que es la VLAN 1 de manera predeterminada.
+
+Las VLAN nativas se definen en la especificación IEEE 802.1Q a fin de mantener la compatibilidad con el tráfico sin etiquetar de modelos anteriores común a las situaciones de LAN antiguas. Una VLAN nativa funciona como identificador común en extremos opuestos de un enlace troncal.
+
+Se recomienda configurar la VLAN nativa como VLAN sin utilizar, independiente de la VLAN 1 y de otras VLAN. De hecho, es común utilizar una VLAN fija para que funcione como VLAN nativa para todos los puertos de enlace troncal en el dominio conmutado.</p>
+                
+                <h1>VLAN de administración</h1>
+                
+                <p>Una VLAN de administración es cualquier VLAN que se configura para acceder a las capacidades de administración de un switch. La VLAN 1 es la VLAN de administración de manera predeterminada. Para crear la VLAN de administración, se asigna una dirección IP y una máscara de subred a la interfaz virtual de switch (SVI) de esa VLAN, lo que permite que el switch se administre mediante HTTP, Telnet, SSH o SNMP. Dado que en la configuración de fábrica de un switch Cisco la VLAN 1 se establece como VLAN predeterminada, la VLAN 1 no es una elección adecuada para la VLAN de administración.
+
+En el pasado, la VLAN de administración para los switches 2960 era la única SVI activa. En las versiones 15.x de IOS de Cisco para los switches de la serie Catalyst 2960, es posible tener más de una SVI activa. Con IOS de Cisco 15.x, se debe registrar la SVI activa específica asignada para la administración remota. Si bien, en teoría, un switch puede tener más de una VLAN de administración, esto aumenta la exposición a los ataques de red.
+
+En la ilustración, actualmente todos los puertos están asignados a la VLAN 1 predeterminada. No hay ninguna VLAN nativa asignada explícitamente ni otras VLAN activas; por lo tanto, la VLAN nativa de la red que se diseñó es la VLAN de administración. Esto se considera un riesgo de seguridad.</p>
+          </div>
+            </main>
+            <footer class="footer">
+             <div class="container">
+                <p>© Derechos reservados a los Alumnos del plantel conalep Gustavo Baz</p>
+                 <p>© Hernandez Reyes Marco Antonio</p>
+                 <p>© Enciso Martines Carlos Yael</p>
+                 <p>© Miranda Fuentes Amairani</p>
+                </div>
+            </footer>
+        </section>
+        
+    </body>
+</html>

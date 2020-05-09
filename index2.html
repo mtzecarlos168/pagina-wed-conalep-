@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Diseño y configuración físico de las redes VLAN</title>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+        <div class="container logo-nav-container">
+            <a href="bienvenida.html" class="logo">Redes VLAN</a>
+            <nav class="navigation">
+             <ul>
+              <li><a href="index.html">¿Que son las VLAN?</a></li>
+              <li><a href="index2.html">Configuracion de la VLAN</a></li>
+              <li><a href="#">Seguridad y diseño de redes VLAN</a></li>
+                 
+                </ul>  
+            </nav>
+            </div>
+        </header>
+    
+        <section>
+            <main class="main">
+            <div class="container">
+                <h1>Configuracion de una VLAN</h1>
+                
+                <h1>Agregue una VLAN</h1>
+                
+                <p>En este tema, aprenderá a crear una VLAN estática en un switch Cisco Catalyst mediante el modo de configuración global de la VLAN. Existen dos modos diferentes para configurar las VLAN en un switch Cisco Catalyst: modo de configuración de base de datos y modo de configuración global. A pesar de que la documentación de Cisco menciona el modo de configuración de base de datos de la VLAN, se elimina a favor del modo de configuración global de la VLAN.</p>
+                
+                <p>El usuario configurará las VLAN con los ID en el rango normal. Recuerde que existen dos rangos de ID de la VLAN. El rango normal incluye los ID 1 a 1001 y el rango ampliado consiste de los ID 1006 a 4094. VLAN 1 y 1002 a 1005 son números de ID reservados. Cuando configura las VLAN de rango normal, los detalles de configuración se almacenan automáticamente en la memoria flash del switch en un archivo llamado vlan.dat. Debido a que el usuario configura frecuentemente otros aspectos de un switch Cisco al mismo tiempo, es una buena práctica guardar los cambios de la configuración activa en la configuración de inicio.</p>
+                <img src="images/vlan1.jpg">
+               <p>La figura revisa los comandos IOS de Cisco utilizados para agregar una VLAN a un switch.
+
+</p>
+                
+            <img src="images/imagen1.jpg">
+       <p>La figura muestra cómo se configura la VLAN estudiante, VLAN 20 en el switch S1. En el ejemplo de topología, la computadora del estudiante, la PC2, aún no es una VLAN, pero tiene una dirección IP de 172.17.20.22.</p>
+                
+                      <img src="images/imagen2.jpg">
+                
+                <p>La figura muestra un ejemplo de uso del comando show vlan brief para mostrar los contenidos del archivo vlan.dat. En la captura de pantalla se resalta la VLAN del estudiante, VLAN 20. Los ID de VLAN predeterminada 1 y 1002 a 1005 se muestran en los resultados que aparecen en pantalla.
+
+Nota: Además de ingresar un ID simple de VLAN, el usuario puede ingresar una serie de ID de VLAN separada por comas o un rango de ID de VLAN separado por guiones, usando el comando vlan vlan-id, por ejemplo: switch(config)#vlan 100,102,105-107.</p>
+                
+                <h1>Asignación de un puerto de switch</h1>
+                
+                <p>Después de crear una VLAN, asígnele un puerto o más. Cuando asigna un puerto de switch a una VLAN en forma manual, se lo conoce como puerto de acceso estático. Un puerto de acceso estático puede pertenecer a sólo una VLAN por vez.
+
+Haga clic en el botón Sintaxis del comando en la figura para revisar los comandos IOS de Cisco para asignar un puerto de acceso estático a la VLAN.</p>
+                <img src="images/IMAGEN42.jpg">
+                
+                <p>La figura revisa los comandos IOS de Cisco utilizados para agregar una VLAN a un switch.</p>
+                
+                <img src="images/IMAGEN40.jpg">
+                
+                <p>La figura muestra cómo se configura la VLAN estudiante, VLAN 20 en el switch S1. En el ejemplo de topología, la computadora del estudiante, la PC2, aún no es una VLAN, pero tiene una dirección IP de 172.17.20.22.</p>
+                
+                <img src="images/IMAGEN41.jpg">
+                
+                <p>La figura muestra un ejemplo de uso del comando show vlan brief para mostrar los contenidos del archivo vlan.dat. En la captura de pantalla se resalta la VLAN del estudiante, VLAN 20. Los ID de VLAN predeterminada 1 y 1002 a 1005 se muestran en los resultados que aparecen en pantalla.
+
+Nota: Además de ingresar un ID simple de VLAN, el usuario puede ingresar una serie de ID de VLAN separada por comas o un rango de ID de VLAN separado por guiones, usando el comando vlan vlan-id, por ejemplo: switch(config)#vlan 100,102,105-107.</p>
+                
+                <h1>Asignación de un puerto de switch</h1>
+                
+                <p>Después de crear una VLAN, asígnele un puerto o más. Cuando asigna un puerto de switch a una VLAN en forma manual, se lo conoce como puerto de acceso estático. Un puerto de acceso estático puede pertenecer a sólo una VLAN por vez.
+
+Haga clic en el botón Sintaxis del comando en la figura para revisar los comandos IOS de Cisco para asignar un puerto de acceso estático a la VLAN.</p>
+                
+           <img src="images/IMAGEN4.jpg">
+                
+                <p>Haga clic en el botón Ejemplo en la figura para ver cómo la VLAN del estudiante, VLAN 20, se asigna estáticamente al puerto F0/18 en el switch S1. El puerto F0/18 se ha asignado a la VLAN 20, de manera que la computadora del estudiante, PC2, está en la VLAN 20. Cuando la VLAN 20 se configura en otros switches, el administrador de red sabe configurar las otras computadoras de estudiantes para encontrarse en la misma subred que PC2: 172.17.20.0 /24.</p>
+                
+                <img src="images/IMAGEN3.jpg">
+                
+                <p>Haga clic en el botón Verificación en la figura para confirmar que el comando show vlan brief muestra los contenidos del archivo vlan.dat. En la captura de pantalla se resalta la VLAN del estudiante, VLAN 20.</p>
+                <img src="images/IMAGEN5.jpg">
+    </div>
+            </main>
+            <footer class="footer">
+             <div class="container">
+                <p>© Derechos reservados a los Alumnos del plantel conalep Gustavo Baz</p>
+                 <p>© Hernandez Reyes Marco Antonio</p>
+                 <p>© Enciso Martines Carlos Yael</p>
+                 <p>© Miranda Fuentes Amairani</p>
+                </div>
+            </footer>
+        </section>
+        
+    </body>
+</html>

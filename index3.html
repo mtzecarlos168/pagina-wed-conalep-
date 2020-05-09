@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Diseño y configuración físico de las redes VLAN</title>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+        <div class="container logo-nav-container">
+            <a href="bienvenida.html" class="logo">Redes VLAN</a>
+            <nav class="navigation">
+             <ul>
+              <li><a href="index.html">¿Que son las VLAN?</a></li>
+              <li><a href="index2.html">Configuracion de la VLAN</a></li>
+              <li><a href="index3.html">Seguridad y diseño de redes VLAN</a></li>
+           
+                </ul>  
+            </nav>
+            </div>
+        </header>
+    
+        <section>
+            <main class="main">
+            <div class="container">
+                <h1>Los switches</h1>
+                
+                <p>Cisco tienen una configuración de fábrica en la cual las VLAN predeterminadas se preconfiguran para admitir diversos tipos de medios y protocolos. La VLAN Ethernet predeterminada es la VLAN 1. Por seguridad, se recomienda configurar todos los puertos de todos los switches para que se asocien a VLAN distintas de la VLAN 1. Generalmente, esto se logra configurando todos los puertos sin utilizar en una VLAN de agujero negro que no se use para nada en la red. Todos los puertos utilizados se asocian a VLAN independientes de la VLAN 1 y de la VLAN de agujero negro. También se recomienda desactivar los puertos de switch sin utilizar para evitar el acceso no autorizado. </p>
+                
+                <p>Una buena práctica de seguridad es separar el tráfico de administración y de datos de usuario. La VLAN de administración, que es la VLAN 1 de manera predeterminada, se debe cambiar a una VLAN diferente e independiente. Para comunicarse de manera remota con un switch Cisco con fines de administración, el switch debe tener una dirección IP configurada en la VLAN de administración. Los usuarios en otras VLAN no pueden establecer sesiones de acceso remoto al switch, a menos que se los enrute a la VLAN de administración, lo que proporciona una capa de seguridad adicional. Además, se debe configurar el switch para que solo acepte sesiones SSH cifradas para la administración remota..</p>
+                
+                <p>Todo el tráfico de control se envía por la VLAN 1. Por lo tanto, cuando se cambia la VLAN nativa a una opción distinta de la VLAN 1, todo el tráfico de control se etiqueta en los enlaces troncales de VLAN IEEE 802.1Q (se etiqueta con la ID de VLAN 1). Por seguridad, se recomienda cambiar la VLAN nativa a una VLAN distinta de la VLAN 1. La VLAN nativa también debe ser distinta de todas las VLAN de usuarios. Asegúrese de que la VLAN nativa para un enlace troncal 802.1Q sea la misma en ambos extremos del enlace troncal.</p>
+                
+                <p>Dependiendo de la fuente consultada incluso del fabricante se pueden distinguir hasta seis tipos de redes virtuales. Sin embargo, nosotros solo nos vamos a centrar en tres: a nivel de puerto, MAC y aplicación.</p>
+             
+                <p>*Puerto. También conocida como Port Switching en los menús de configuración de los routers y switches, se trata de la más extendida y utilizada. Cada puerto se asigna a una VLAN y los usuarios que estén conectados a ese puerto pertenecen a la VLAN asignada. Los usuarios dentro de una misma VLAN poseen de visibilidad los unos sobre los otros, aunque no a las redes virtuales vecinas. El único inconveniente es que no permite dinamismo a la hora de ubicar los usuarios y en el caso de que el usuario cambie de emplazamiento físicamente se debería reconfigurar la red virtual.</p>
+             
+                <p>DTP ofrece cuatro modos de puerto de switch: acceso, enlace troncal, dinámico automático y dinámico deseado. Una pauta general es inhabilitar la autonegociación. Una práctica recomendada de seguridad de puertos es no utilizar los modos de puerto de switch dinámico automático o dinámico deseado.</p>
+                <p>*Aplicaciones: Se asignarían redes virtuales en función de la aplicación utilizada, y en este caso intervienen varios factores, como por ejemplo la hora en la que nos encontramos, la dirección MAC o la subred, permitiendo distinguir entre aplicaciones SSH, FTP, Samba o incluso SMTP.</p>
+                
+                <p>Por último, el tráfico de voz tiene requisitos de QoS estrictos. Si las computadoras y los teléfonos IP de los usuarios están en la misma VLAN, cada uno intenta usar el ancho de banda disponible sin tener en cuenta al otro dispositivo. Para evitar este conflicto, es aconsejable utilizar VLAN separadas para la telefonía IP y para el tráfico de datos.
+
+</p>
+                
+               
+          </div>
+            </main>
+            <footer class="footer">
+             <div class="container">
+                <p>© Derechos reservados a los Alumnos del plantel conalep Gustavo Baz</p>
+                 <p>© Hernandez Reyes Marco Antonio</p>
+                 <p>© Enciso Martines Carlos Yael</p>
+                 <p>© Miranda Fuentes Amairani</p>
+                </div>
+            </footer>
+        </section>
+        
+    </body>
+</html>

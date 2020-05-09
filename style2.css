@@ -1,0 +1,86 @@
+body {
+   font-family: georgia, time, serif;
+    color: black;
+    font-size: 1.3rem;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 1.3em;
+    color: coral;
+}
+
+p {
+    margin-bottom: 1.6em;
+}
+
+.container {
+    width: 85%;
+    max-width: 9520px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #333;
+    color: crimson;
+    padding: 4rem 0;
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.header a {
+    color: deepskyblue;
+    text-decoration: none;
+}
+
+.logo-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    letter-spacing: 0px;
+    font-size: 3em;
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+.navigation ul li {
+    display: inline-block;
+    
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 0.0rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+    
+}
+
+.navigation ul li a:hover {
+    background: #f4f4f4;
+}
+
+.main {
+    padding-top: 11rem;
+}
+
+.footer {
+    background: #C7C7C7;
+    padding: 2rem ;
+    text-align: center;
+    margin-top: 6rem;
+}
+
